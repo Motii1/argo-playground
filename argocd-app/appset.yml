@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-appset
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/Motii1/argo-playground.git
+        revision: HEAD
+        directories:
+          - path: argocd-app/base/apps
+  template:
+    metadata:
+      name: "{{path.basename}}" # Użyj nazwy katalogu jako nazwy aplikacji
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Motii1/argo-playground.git
+        path: argocd-app/base/apps
+        targetRevision: HEAD
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
