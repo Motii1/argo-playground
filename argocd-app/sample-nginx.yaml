@@ -8,7 +8,7 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argocd-app/overlays/self-managed
+    path: argocd-app/base
     repoURL: https://github.com/Motii1/argo-playground.git
     targetRevision: HEAD
   project: default
