@@ -1,4 +1,4 @@
-# argocd-app.yaml
+# argocd-app/argocd-app.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -12,7 +12,7 @@ spec:
     path: overlays/self-managed
     repoURL: https://github.com/Motii1/argo-playground.git
     targetRevision: HEAD
-  project: default
+  project: argocd
   syncPolicy:
     automated:
       prune: true
