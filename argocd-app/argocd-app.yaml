@@ -12,7 +12,7 @@ spec:
     path: overlays/self-managed
     repoURL: https://github.com/Motii1/argo-playground.git
     targetRevision: HEAD
-  project: argocd
+  project: default
   syncPolicy:
     automated:
       prune: true
