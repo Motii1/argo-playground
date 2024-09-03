@@ -5,4 +5,3 @@ namespace: argocd
 
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/install.yaml
-  - sample-nginx.yml
