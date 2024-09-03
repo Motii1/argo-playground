@@ -12,7 +12,7 @@ spec:
           - path: argocd-app/base/apps
   template:
     metadata:
-      name: "{{path.filename}}"
+      name: "{{path.basename}}"
     spec:
       project: default
       source:
